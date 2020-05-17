@@ -94,11 +94,37 @@ class Auth extends CI_Controller {
             ];
 
             $this->db->insert('user',$data);
+
+            // $this->_sendEmail();
             $this->session->set_flashdata('message','  <div class="alert alert-success alert-dismissible text-center"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><i class="icon fas fa-check"></i>Congratulation! your account has been created. Please Login</div>');
             redirect('auth');
         }
     }
     
+    // private function _sendEmail()
+    // {
+    //         $config = [
+    //                     'protocol' => 'smtp',
+    //                     'smtp_host' => 'ssl://smtp.googlemail.com',
+    //                     'smtp_user' => 'johnstc441@gmail.com',
+    //                     'smtp_pass' => 'manusia1231',
+    //                     'smtp_port' => 456,
+    //                     'mailtype' => 'html',
+    //                     'charset' => 'utf-8',
+    //                     'newline' => '\r\n',
+    //         ];
+
+    //         $this->load->library('email',$config);
+
+    //         $this->email->from('johnstc441@gmail.com', "CI Login");
+    //         $this->email->to('johnstc441@gmail.com');
+    //         $this->email->subject('Testing');
+    //         $this->email->message('Hello World! ');
+            
+    //         if($this->email->send());
+
+    // }
+
     public function logout()
     {
         $this->session->unset_userdata('email');

@@ -89,8 +89,7 @@ class Menu extends CI_Controller {
 				        icon: 'success',
 				        title: 'New Submenu Added!'
 				      })</script>");
-                    redirect('submenu');
-
+                    redirect('menu/submenu');
 	        }
 	}
 
